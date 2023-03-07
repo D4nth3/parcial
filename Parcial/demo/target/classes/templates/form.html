@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${titulo}"></title>
+</head>
+<body>
+    <h1 th:text="${titulo}"></h1>
+    <form th:action="@{/form}" th:object="$empleado" method="post">
+        <label for="">id</label>
+        <input type="text" name="id" id="id"th:field="*{id}">
+        <span th:if="${#fields.hashErrors('id')}" th:errors="*{id}">
+        </span>
+        <label for="">nombre</label>
+        <input type="text" name="nombre" id="nombre"th:field="*{nombre}">
+        <span th:if="${#fields.hashErrors('nombre')}" th:errors="*{nombre}">
+        </span>
+        <label for="">apellido</label>
+        <input type="text" name="apellido" id="apellido"th:field="*{apellido}">
+        <span th:if="${#fields.hashErrors('apellido')}" th:errors="*{apellido}">
+        </span>
+        <label for="">correo</label>
+        <input type="text" name="correo" id="correo"th:field="*{correo}">
+        <span th:if="${#fields.hashErrors('correo')}" th:errors="*{correo}">
+        </span>
+        <label for="">direccion</label>
+        <input type="text" name="direccion" id="direccion"th:field="*{direccion}">
+        <span th:if="${#fields.hashErrors('direccion')}" th:errors="*{direccion}">
+        </span>
+        <label for="">telefono</label>
+        <input type="text" name="telefono" id="telefono"th:field="*{telefono}">
+        <span th:if="${#fields.hashErrors('telefono')}" th:errors="*{telefono}">
+        </span>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
